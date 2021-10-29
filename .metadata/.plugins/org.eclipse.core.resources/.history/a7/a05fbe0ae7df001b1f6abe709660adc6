@@ -1,0 +1,5 @@
+package com.test.demo.constants;
+
+public class Messages {
+public final PRODUCT_NOT_FOUND = "Product Not Found!";
+}

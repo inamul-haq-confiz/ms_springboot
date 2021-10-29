@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun Test deleteById Invalid" project="spring-boot-cs" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.demo.services.tests.ProductServiceTest" time="0.028" displayname="ProductServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.tests.ProductServiceTest]">
+    <testcase name="testDeleteByIdInvalid" classname="com.test.demo.services.tests.ProductServiceTest" time="0.028" displayname="Test deleteById Invalid" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.tests.ProductServiceTest]/[method:testDeleteByIdInvalid()]"/>
+  </testsuite>
+</testrun>

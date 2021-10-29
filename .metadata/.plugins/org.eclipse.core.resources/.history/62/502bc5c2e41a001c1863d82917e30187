@@ -1,0 +1,20 @@
+package com.photoapp.api.gateway;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class GlobalFiltersConfiguration {
+	@Bean
+	public GlobalFilter secondPreFilter() {
+		
+		return(exchange, chain)-> {
+			
+			logger.info("My second global prefilter is executed.");
+			
+			return chain.filter(exchange).then(Mono.fromRunnable(()->{
+				logger.info("My third global post filter is executed.");
+			}));
+		};
+				
+	}
+}

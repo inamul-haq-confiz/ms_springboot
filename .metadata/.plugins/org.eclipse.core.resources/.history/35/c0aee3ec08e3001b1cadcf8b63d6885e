@@ -1,0 +1,7 @@
+package com.test.demo.constants;
+
+public final class Messages {
+public static final String PRODUCT_NOT_FOUND = "Product Not Found!";
+private static final String USER_REGISTERED_SUCCESSFULLY = "User registered successfully";
+
+}

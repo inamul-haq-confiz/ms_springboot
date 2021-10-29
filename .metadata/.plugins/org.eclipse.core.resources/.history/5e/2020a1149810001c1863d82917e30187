@@ -1,0 +1,2 @@
+servver.port=8010
+spring.application.name=discoveryservice

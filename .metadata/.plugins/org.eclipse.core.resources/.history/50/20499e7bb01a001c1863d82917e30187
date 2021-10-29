@@ -1,0 +1,20 @@
+package com.photoapp.api.users.security;
+
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
+			throws AuthenticationException {
+
+		try {
+			LoginRequestModel creds = new ObjectMapper().readValue(req.getInputStream(), LoginRequestModel.class);
+
+			return getAuthenticationManager().authenticate(
+					new UsernamePasswordAuthenticationToken(creds.getEmail(), creds.getPassword(), new ArrayList<>()));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+}

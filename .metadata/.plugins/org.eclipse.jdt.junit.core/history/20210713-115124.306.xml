@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun Test loadUserByUsername Invalid" project="spring-boot-cs" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.demo.services.tests.UserDetailsServiceImplTests" incomplete="true" displayname="UserDetailsServiceImplTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.tests.UserDetailsServiceImplTests]">
+    <testcase name="testloadUserByUsernameInvalid" classname="com.test.demo.services.tests.UserDetailsServiceImplTests" incomplete="true" displayname="Test loadUserByUsername Invalid" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.tests.UserDetailsServiceImplTests]/[method:testloadUserByUsernameInvalid()]"/>
+  </testsuite>
+</testrun>

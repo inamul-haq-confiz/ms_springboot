@@ -1,0 +1,62 @@
+package com.test.demo.services;
+import java.util.List;
+import java.util.stream.Collectors;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.demo.constants.Messages;
+import com.test.demo.dtos.ProductDto;
+import com.test.demo.dtos.UserDto;
+import com.test.demo.model.Product;
+import com.test.demo.model.User;
+import com.test.demo.repository.ProductRepository;
+import com.test.demo.repository.UserRepository;
+
+@Service
+public class AccountService{
+
+	@Autowired
+	private UserRepository repository;
+	@Autowired
+	private ModelMapper mapper;
+
+	public boolean register(UserDto user){
+		var existingUser = repository.findByUsername(user.getUsername());
+		var product = repository.findById(id);
+		if(product == null) { throw new RuntimeException(Messages.PRODUCT_NOT_FOUND);}
+		return mapToDto(product.get());
+	}
+//
+//	
+//	public ProductDto addProduct(ProductDto product) {		
+//		var productToInsert = mapToModel(product);
+//		var newProduct = repository.save(productToInsert);		
+//		return mapToDto(newProduct);
+//	}
+//
+//	
+//	public ProductDto updateProduct(ProductDto product) {		
+//		var productToUpdate = mapToModel(product);
+//		var newProduct = repository.save(productToUpdate);	
+//		return mapToDto(newProduct);	
+//		}
+//
+//	
+//	public boolean deleteProduct(String id) {
+//		if(repository.findById(id) == null)
+//		{throw new RuntimeException(Messages.PRODUCT_NOT_FOUND);}
+//		repository.deleteById(id);
+//		return true;
+//	}
+	
+//	private ProductDto mapToDto(Product product)
+//	{
+//		return mapper.map(product, ProductDto.class);
+//	}
+//	private Product mapToModel(ProductDto product)
+//	{
+//		return mapper.map(product, Product.class);
+//	}
+
+}

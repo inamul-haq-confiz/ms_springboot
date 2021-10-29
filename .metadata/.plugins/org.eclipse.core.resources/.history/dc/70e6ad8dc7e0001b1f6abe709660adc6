@@ -1,0 +1,8 @@
+package com.test.demo.config;
+
+public class AppConstants {
+
+	public static final String SECRET = "atdx4od";
+	private static final String HEADER = "Authorization";
+	private static final String PREFIX = "Bearer ";
+}

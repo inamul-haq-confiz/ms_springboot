@@ -1,0 +1,15 @@
+package com.photoapp.api.users.model;
+
+import lombok.Data;
+import lombok.NonNull;
+
+@Data
+public class CreateUserRequestModel {
+	
+	@NonNull(message="First Name can't be null")
+	private String firstName;
+private String lastName;
+private String password;
+private String email;
+
+}

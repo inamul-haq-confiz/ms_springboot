@@ -1,0 +1,42 @@
+package com.photoapp.api.users.security;
+
+import java.io.IOException;
+import java.sql.Date;
+import java.util.ArrayList;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.photoapp.api.users.model.LoginRequestModel;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
+			throws AuthenticationException {
+
+		try {
+			LoginRequestModel creds = new ObjectMapper().readValue(req.getInputStream(), LoginRequestModel.class);
+
+			return getAuthenticationManager().authenticate(
+					new UsernamePasswordAuthenticationToken(creds.getEmail(), creds.getPassword(), new ArrayList<>()));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+}

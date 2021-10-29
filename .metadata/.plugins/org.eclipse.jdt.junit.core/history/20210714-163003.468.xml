@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AccountsControllerTests" project="spring-boot-cs" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.demo.controllers.tests.AccountsControllerTests" time="0.117" displayname="AccountsControllerTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.tests.AccountsControllerTests]">
+    <testcase name="testLoginInvalidUserCredentials" classname="com.test.demo.controllers.tests.AccountsControllerTests" time="0.052" displayname="Test login Invalid Credentials" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.tests.AccountsControllerTests]/[method:testLoginInvalidUserCredentials()]"/>
+    <testcase name="testLogin" classname="com.test.demo.controllers.tests.AccountsControllerTests" time="0.02" displayname="Test login Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.tests.AccountsControllerTests]/[method:testLogin()]"/>
+    <testcase name="testRegisterDuplicateUser" classname="com.test.demo.controllers.tests.AccountsControllerTests" time="0.012" displayname="Test register Duplicate User" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.tests.AccountsControllerTests]/[method:testRegisterDuplicateUser()]"/>
+    <testcase name="testRegister" classname="com.test.demo.controllers.tests.AccountsControllerTests" time="0.011" displayname="Test register Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.tests.AccountsControllerTests]/[method:testRegister()]"/>
+    <testcase name="testLoginInvalidUserName" classname="com.test.demo.controllers.tests.AccountsControllerTests" time="0.006" displayname="Test login Invalid Username" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.tests.AccountsControllerTests]/[method:testLoginInvalidUserName()]"/>
+  </testsuite>
+</testrun>

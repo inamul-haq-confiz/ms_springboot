@@ -1,0 +1,13 @@
+package com.photoapp.discoveryservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PhotoAppDiscoveryService1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PhotoAppDiscoveryService1Application.class, args);
+	}
+
+}

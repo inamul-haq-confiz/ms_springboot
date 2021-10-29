@@ -1,0 +1,73 @@
+package com.test.demo.services;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.security.auth.login.CredentialNotFoundException;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.test.demo.constants.Messages;
+import com.test.demo.dtos.ProductDto;
+import com.test.demo.dtos.TokenDto;
+import com.test.demo.dtos.UserDto;
+import com.test.demo.model.Product;
+import com.test.demo.model.User;
+import com.test.demo.repository.ProductRepository;
+import com.test.demo.repository.UserRepository;
+
+import ch.qos.logback.core.subst.Token;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+@Service
+public class AuthenticationService extends BaseService{
+
+	@Autowired
+	private UserDetailsService service;
+	@Autowired
+	private ModelMapper mapper;
+	@Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+	public TokenDto authenticate(String username, String password) throws CredentialNotFoundException{
+		var user = service.loadUserByUsername(username);
+		if (user == null) {
+            throw new UsernameNotFoundException("Username doesn't exist.");
+        }
+		if(!bCryptPasswordEncoder.matches(password, user.getPassword()))
+		{
+            throw new CredentialNotFoundException("Credentials didn't match.");
+		}
+		return getJWTToken(user.getUsername());
+	}
+	private TokenDto getJWTToken(String username) {
+		String secretKey = "atdx4od";
+		List<GrantedAuthority> grantedAuthorities = AuthorityUtils
+				.commaSeparatedStringToAuthorityList("ROLE_USER");
+		
+		var issuedAt = new Date(System.currentTimeMillis());
+		var expireAt = new Date(System.currentTimeMillis() + 600000);
+		var token = Jwts
+				.builder()
+				.setId("softtekJWT")
+				.setSubject(username)
+				.claim("authorities",
+						grantedAuthorities.stream()
+								.map(GrantedAuthority::getAuthority)
+								.collect(Collectors.toList()))
+				.setIssuedAt(issuedAt)
+				.setExpiration(expireAt)
+				.signWith(SignatureAlgorithm.HS512,
+						secretKey.getBytes()).compact();
+
+		return new TokenDto(token,issuedAt, expireAt);
+	}
+}

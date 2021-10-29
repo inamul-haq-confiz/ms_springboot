@@ -1,0 +1,85 @@
+package com.photoapp.api.users.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.photoapp.api.users.dto.UserDto;
+import com.photoapp.api.users.entities.UserEntity;
+import com.photoapp.api.users.model.AlbumResponseModel;
+import com.photoapp.api.users.repository.UsersRepository;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+
+	@Autowired
+	UsersRepository usersRepository;
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Override
+	public UserDto createUser(UserDto userdetails) {
+		userdetails.setUserId(UUID.randomUUID().toString());
+		var mapper = new ModelMapper();
+		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		var userEntity = mapper.map(userdetails, UserEntity.class);
+		userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(userdetails.getPassword()));
+		usersRepository.save(userEntity);
+		return  mapper.map(userEntity, UserDto.class);
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		var userEntity = usersRepository.findByEmail(username);
+		if (userEntity == null) throw new UsernameNotFoundException(username);
+		return new User(userEntity.getEmail(), userEntity.getEncryptedPassword(), true, true, true, true, new ArrayList<>());
+	}
+	@Override
+	public UserDto getUserByEmail(String email) {
+		
+		UserEntity userEntity = usersRepository.findByEmail(email);
+		if (userEntity == null) {
+			throw new UsernameNotFoundException(email);
+		}
+		
+		return new ModelMapper().map(userEntity, UserDto.class);
+	}
+	@Override
+	public UserDto getUserByUserId(String userId) {
+		
+		UserEntity userEntity = usersRepository.findByUserId(userId);
+			if(userEntity == null) {
+				throw new UsernameNotFoundException("User not found");
+			}
+			
+		UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
+		
+//	    Use these lines with RestTemplate:	
+/*		String albumsUrl = String.format(env.getProperty("albums.url"), userId);
+		
+		ResponseEntity<List<AlbumResponseModel>>albumsListResponse = restTemplate
+				  		  .exchange(albumsUrl, HttpMethod.GET, null, 
+						  new ParameterizedTypeReference<List<AlbumResponseModel>>() {					  
+				  });
+		List<AlbumResponseModel>albumList =albumsListResponse.getBody();
+*/
+
+		//log.info("BEFORE calling Albums Ms");
+//		And this line with Feign Client:
+		List<AlbumResponseModel> albumList = albumsServiceClient.getAlbums(userId);
+		//log.info("AFTER calling Albums Ms");
+		
+		userDto.setAlbums(albumList);
+		
+		return userDto;
+	}
+}

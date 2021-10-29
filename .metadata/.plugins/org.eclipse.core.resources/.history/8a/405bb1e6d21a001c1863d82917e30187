@@ -1,0 +1,5 @@
+package com.photoapp.api.gateway;
+
+public class AuthorizationHeaderFilter {
+
+}

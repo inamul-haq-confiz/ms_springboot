@@ -1,0 +1,14 @@
+spring.application.name=PhotoAppApiConfigServer
+server.port=8012
+spring.cloud.config.server.git.uri=https://github.com/inamul-haq-confiz/PhotoAppConfiguration.git
+spring.cloud.config.server.git.username=inamul.haq
+spring.cloud.config.server.git.password=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
+spring.cloud.config.server.git.clone-on-start=true
+management.endpoints.web.exposure.include=busrefresh
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+#spring.profiles.active=native,git
+
+encrypt.key = {cipher}f2e71333ce3e408a50a3e9cb81e91b1b81d4ec4000dada0ac0977041c00637ad1ef6b41610797dbfdf0e218d3d2cdaf51ae4e2717ba42fc3b6adbdf45a1cadcd

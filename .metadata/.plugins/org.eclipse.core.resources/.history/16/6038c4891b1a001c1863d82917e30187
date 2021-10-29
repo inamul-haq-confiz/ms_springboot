@@ -1,0 +1,20 @@
+package com.photoapp.api.users.service;
+
+import java.util.UUID;
+
+import org.modelmapper.ModelMapper;
+
+import com.photoapp.api.users.dto.UserDto;
+import com.photoapp.api.users.entities.UserEntity;
+
+public class UsersServiceImpl implements UsersService {
+
+	@Override
+	public UserDto createUser(UserDto userdetails) {
+		userdetails.setUserId(UUID.randomUUID().toString());
+		var mapper = new ModelMapper();
+		var userEntity = mapper.map(userdetails, UserEntity.class);
+		return null;
+	}
+ 
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="spring-boot-cs (1)" project="spring-boot-cs" tests="22" started="22" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.demo.DemoApplicationTests" time="0.83" displayname="DemoApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.DemoApplicationTests]">
+    <testcase name="contextLoads" classname="com.test.demo.DemoApplicationTests" time="0.83" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.DemoApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.test.demo.services.AccountsServiceTests" time="0.09" displayname="AccountsServiceTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.AccountsServiceTests]">
+    <testcase name="testRegisterDuplicateUser" classname="com.test.demo.services.AccountsServiceTests" time="0.043" displayname="Test register Duplicate User" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.AccountsServiceTests]/[method:testRegisterDuplicateUser()]"/>
+    <testcase name="testRegister" classname="com.test.demo.services.AccountsServiceTests" time="0.044" displayname="Test register Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.AccountsServiceTests]/[method:testRegister()]"/>
+  </testsuite>
+  <testsuite name="com.test.demo.services.AuthenticationServiceTests" time="0.015" displayname="AuthenticationServiceTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.AuthenticationServiceTests]">
+    <testcase name="testRegisterDuplicateUser" classname="com.test.demo.services.AuthenticationServiceTests" time="0.005" displayname="Test register Duplicate User" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.AuthenticationServiceTests]/[method:testRegisterDuplicateUser()]"/>
+    <testcase name="testRegister" classname="com.test.demo.services.AuthenticationServiceTests" time="0.008" displayname="Test register Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.AuthenticationServiceTests]/[method:testRegister()]"/>
+  </testsuite>
+  <testsuite name="com.test.demo.services.ProductServiceTest" time="0.066" displayname="ProductServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]">
+    <testcase name="testDeleteByIdInvalid" classname="com.test.demo.services.ProductServiceTest" time="0.015" displayname="Test deleteById Invalid" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testDeleteByIdInvalid()]"/>
+    <testcase name="testGetByIdInvalid" classname="com.test.demo.services.ProductServiceTest" time="0.005" displayname="Test getById Invalid" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testGetByIdInvalid()]"/>
+    <testcase name="testGetById" classname="com.test.demo.services.ProductServiceTest" time="0.007" displayname="Test getById Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testGetById()]"/>
+    <testcase name="testUpdateProduct" classname="com.test.demo.services.ProductServiceTest" time="0.012" displayname="Test updateProduct Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testUpdateProduct()]"/>
+    <testcase name="testAddProduct" classname="com.test.demo.services.ProductServiceTest" time="0.008" displayname="Test addProduct Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testAddProduct()]"/>
+    <testcase name="testDeleteById" classname="com.test.demo.services.ProductServiceTest" time="0.005" displayname="Test deleteById Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testDeleteById()]"/>
+    <testcase name="testGetAll" classname="com.test.demo.services.ProductServiceTest" time="0.007" displayname="Test getAll Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.ProductServiceTest]/[method:testGetAll()]"/>
+  </testsuite>
+  <testsuite name="com.test.demo.controllers.ProductControllerTest" time="0.035" displayname="ProductControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.ProductControllerTest]">
+    <testcase name="testGetById" classname="com.test.demo.controllers.ProductControllerTest" time="0.008" displayname="Test getById Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.ProductControllerTest]/[method:testGetById()]"/>
+    <testcase name="testUpdateProduct" classname="com.test.demo.controllers.ProductControllerTest" time="0.004" displayname="Test updateProduct Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.ProductControllerTest]/[method:testUpdateProduct()]"/>
+    <testcase name="testAddProduct" classname="com.test.demo.controllers.ProductControllerTest" time="0.004" displayname="Test addProduct Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.ProductControllerTest]/[method:testAddProduct()]"/>
+    <testcase name="testDeleteById" classname="com.test.demo.controllers.ProductControllerTest" time="0.008" displayname="Test deleteById Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.ProductControllerTest]/[method:testDeleteById()]"/>
+    <testcase name="testGetAll" classname="com.test.demo.controllers.ProductControllerTest" time="0.004" displayname="Test getAll Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.ProductControllerTest]/[method:testGetAll()]"/>
+  </testsuite>
+  <testsuite name="com.test.demo.controllers.AccountsControllerTests" time="0.069" displayname="AccountsControllerTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.AccountsControllerTests]">
+    <testcase name="testLoginInvalidUserCredentials" classname="com.test.demo.controllers.AccountsControllerTests" time="0.01" displayname="Test login Invalid Credentials" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.AccountsControllerTests]/[method:testLoginInvalidUserCredentials()]"/>
+    <testcase name="testLogin" classname="com.test.demo.controllers.AccountsControllerTests" time="0.01" displayname="Test login Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.AccountsControllerTests]/[method:testLogin()]"/>
+    <testcase name="testRegisterDuplicateUser" classname="com.test.demo.controllers.AccountsControllerTests" time="0.013" displayname="Test register Duplicate User" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.AccountsControllerTests]/[method:testRegisterDuplicateUser()]"/>
+    <testcase name="testRegister" classname="com.test.demo.controllers.AccountsControllerTests" time="0.021" displayname="Test register Success" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.AccountsControllerTests]/[method:testRegister()]"/>
+    <testcase name="testLoginInvalidUserName" classname="com.test.demo.controllers.AccountsControllerTests" time="0.006" displayname="Test login Invalid Username" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.controllers.AccountsControllerTests]/[method:testLoginInvalidUserName()]"/>
+  </testsuite>
+</testrun>

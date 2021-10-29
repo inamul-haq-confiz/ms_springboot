@@ -1,0 +1,17 @@
+1626083920958	Rename method 'map'
+1626085227685	Copy compilation unit
+1626085238316	Rename type 'AccountController'
+1626085334239	Rename type 'AccountService'
+1626085349879	Rename type 'AccountControllerTests'
+1626091283679	Extract constant 'USER_REGISTERED_SUCCESSFULLY'
+1626093221793	Copy compilation unit
+1626095003419	Extract constant 'USERNAME_ALREADY_TAKEN'
+1626097266652	Extract constant 'USERNAME_DOESN_T_EXIST'
+1626097309146	Extract constant 'CREDENTIALS_DIDN_T_MATCH'
+1626098511704	Copy compilation unit
+1626102748302	Rename field 'service'
+1626157774419	Copy compilation unit
+1626157786555	Rename package 'com.test.demo.services'
+1626157816449	Rename package 'com.test.demo.controllers'
+1626194645434	Delete element
+1626194707140	Delete element

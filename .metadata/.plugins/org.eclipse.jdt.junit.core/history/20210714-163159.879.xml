@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AuthenticationServiceTests.testAuthenticateInvalidUser" project="spring-boot-cs" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.demo.services.tests.AuthenticationServiceTests" time="0.022" displayname="AuthenticationServiceTests" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.tests.AuthenticationServiceTests]">
+    <testcase name="testAuthenticateInvalidUser" classname="com.test.demo.services.tests.AuthenticationServiceTests" time="0.022" displayname="Test authenticate Invalid User" uniqueid="[engine:junit-jupiter]/[class:com.test.demo.services.tests.AuthenticationServiceTests]/[method:testAuthenticateInvalidUser()]"/>
+  </testsuite>
+</testrun>

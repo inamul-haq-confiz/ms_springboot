@@ -1,0 +1,18 @@
+server.port=${PORT:0}
+spring.application.name=users-ws
+eureka.client.service-url.defaultZone=http://localhost:8010/eureka
+#spring.devtools.restart.enabled=true
+eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
+eureka.instance.hostname=localhost
+# h2 database
+spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+#Allow connection from other addresses:
+spring.h2.console.settings.web-allow-others=true
+
+token.expiration_time=864000000
+token.secret=SecreTTokenT001ABC
+login.url.path=/api/users/login
+

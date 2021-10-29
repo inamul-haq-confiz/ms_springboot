@@ -1,0 +1,5 @@
+package com.test.demo.constants;
+
+public class Messages {
+public final Sting PRODUCT_NOT_FOUND = "Product Not Found!";
+}

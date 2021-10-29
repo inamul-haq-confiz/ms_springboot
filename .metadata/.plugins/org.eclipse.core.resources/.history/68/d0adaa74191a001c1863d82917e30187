@@ -1,0 +1,5 @@
+package com.photoapp.api.users.entities;
+
+public class UserEntity {
+
+}

@@ -1,0 +1,8 @@
+package com.photoapp.api.users.interfaces;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient
+public interface AlbumsServiceClient {
+
+}
